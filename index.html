@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Ben-Tahri Merwane</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="HTML5 website template">
+  <meta name="keywords" content="global, template, html, sass, jquery">
+  <meta name="author" content="BTHMRW">
+  <link rel="stylesheet" href="assets/css/main.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+
+<body>
+
+  <style>
+    /* CSS for the typing effect */
+    .text-slider-items {
+      display: inline-block;
+      overflow: hidden;
+      white-space: nowrap;
+      border-right: .15em solid orange;
+      /* Adjust the typing cursor style */
+    }
+  </style>
+  <!-- notification for small viewports and landscape oriented smartphones -->
+  <div class="device-notification">
+    <a class="device-notification--logo" href="#0">
+      <img src="assets/img/logo.png" alt="ME">
+      <p></p>
+    </a>
+  </div>
+
+  <div class="perspective effect-rotate-left">
+    <div class="container">
+      <div class="outer-nav--return"></div>
+      <div id="viewport" class="l-viewport">
+        <div class="l-wrapper">
+          <header class="header">
+            <a class="header--logo" href="#0">
+              <img src="assets/img/logo.png" alt="Global">
+              <p>It's Merwane</p>
+            </a>
+
+            <div class="header--nav-toggle">
+              <span></span>
+            </div>
+          </header>
+          <nav class="l-side-nav">
+            <ul class="side-nav">
+              <li class="is-active">
+                <span>Home</span>
+              </li>
+              <li><span>Work</span></li>
+              <li><span>About</span></li>
+              <li><span>Skills</span></li>
+
+            </ul>
+          </nav>
+
+
+
+          <!-- //intro zone -->
+          <ul class="l-main-content main-content">
+            <li class="l-section section section--is-active">
+              <div class="intro">
+                <div class="intro--banner">
+                  <h1>I'm <span class="typed"
+                      data-typed-items="Technician, Developer, System and Network administrator.">
+
+                    </span></h1>
+
+                  <canvas id="matrix"></canvas>
+
+
+                  <script>
+                    
+                    // Set up canvas
+                    const canvas = document.getElementById('matrix');
+                    const ctx = canvas.getContext('2d');
+
+                    // Set canvas dimensions
+                    canvas.width = 307;
+                    canvas.height = 307;
+
+                    // Characters used for the Matrix effect
+                    const matrixChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789アァカサタナハマヤャラワガザダバパイィキシチニヒミリヰギジヂビピウゥクスツヌフムユュルグズブヅプエェケセテネヘメレヱゲゼデベペオォコソトノホモヨョロヲゴゾドボポヴッン";
+                    const chars = matrixChars.split("");
+
+                    // Font settings
+                    const fontSize = 16;
+                    const columns = canvas.width / fontSize;
+                    const drops = [];
+
+                    // Initialize drops
+                    for (let i = 0; i < columns; i++) {
+                      drops[i] = 1;
+                    }
+
+                    // Drawing function
+                    function draw() {
+                      // Black background
+                      ctx.fillStyle = "rgba(0, 0, 0, 0.04)";
+                      ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+                      // Green text
+                      ctx.fillStyle = "#0F0";
+                      ctx.font = fontSize + "px arial";
+
+                      // Loop over columns
+                      for (let i = 0; i < drops.length; i++) {
+                        // Pick a random character
+                        const text = chars[Math.floor(Math.random() * chars.length)];
+
+                        // Draw character
+                        ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+
+                        // Reset drop if it goes off screen
+                        if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+                          drops[i] = 0;
+                        }
+
+                        // Increment drop
+                        drops[i]++;
+                      }
+                    }
+
+                    // Animation loop
+                    function animate() {
+                      draw();
+                      requestAnimationFrame(animate);
+                      document.getElementById('canvas');
+                      const context = canvas.getContext('2d');
+                      const img = new Image();
+                      img.src = 'assets/img/avatar.png';
+                      img.onload = () => { context.drawImage(img, 0, 0); };
+
+                    }
+
+                    // Start animation
+                    animate();
+                    // Adjust canvas on window resize
+                    window.addEventListener('resize', function () {
+
+                      drops = [];
+                      for (let i = 0; i < columns; i++) {
+                        drops[i] = 1;
+                      }
+
+                    });
+
+                  </script>
+                  <script>
+                    // JavaScript for typing effect
+                    const typedElement = document.querySelector('.typed');
+                    const typedItems = typedElement.getAttribute('data-typed-items').split(',');
+                    let index = 0;
+                    let typingSpeed = 100; // Adjust typing speed here
+
+                    function typeText() {
+                      typedElement.textContent = typedItems[index].substring(0, typedElement.textContent.length + 1);
+                      if (typedElement.textContent === typedItems[index]) {
+                        setTimeout(eraseText, 2000); // Wait for 2 seconds before erasing
+                      } else {
+                        setTimeout(typeText, typingSpeed); // Continue typing
+                      }
+                    }
+
+                    function eraseText() {
+                      typedElement.textContent = typedItems[index].substring(0, typedElement.textContent.length - 1);
+                      if (typedElement.textContent === '') {
+                        index = (index + 1) % typedItems.length; // Move to next item
+                        setTimeout(typeText, typingSpeed); // Start typing next item after erasing
+                      } else {
+                        setTimeout(eraseText, typingSpeed); // Continue erasing
+                      }
+                    }
+
+                    typeText();
+                  </script>
+
+
+
+
+                </div>
+
+                <div class="intro--options">
+                  <a href="#0">
+                    <h3>Ben-Tahri Merwane</h3>
+                    <p>
+                      <a href="https://www.linkedin.com/in/merwane-ben-tahri/" target="_blank"
+                        class="fa fa-linkedin-square" style="font-size:30px"></a>
+                    </p>
+                  </a>
+                  <a href="#0">
+                    <h3>Passionate about IT</h3>
+                    <p>Experienced in all things tech</p>
+
+                    <a href=" https://github.com/BentahriMerwane" target="_blank"
+                    class="fa fa-github" style="font-size:30px;color:rgb(18, 127, 199)"></a>
+                   
+                  </a>
+                </div>
+
+              </div>
+            </li>
+
+
+            <!-- //Work zone -->
+            <li class="l-section section">
+              <div class="work">
+
+                <div class="work--lockup">
+                  <ul class="slider">
+                    <li class="slider--item slider--item-left">
+                      <a href="#0">
+                        <div class="slider--item-image">
+                          <img src="assets/img/ottclinic.png" alt="ottigniesclinic">
+                        </div>
+
+                        <div class="slider--item-description">
+                          <h3>Helpdesk Support Specialist</h3>
+                          <p class="date-work">August 2022 - September 2022</p>
+                          <ul>
+                            <li>Provide First-Level Support</li>
+                            <li>Printer Installation and Configuration</li>
+                            <li>Ticket Management</li>
+                            <li>Collaboration with IT Teams</li>
+                            <li>Documentation</li>
+                            <li>Customer Service</li>
+                          </ul>
+                        </div>
+
+                      </a>
+                    </li>
+
+                    <li class="slider--item slider--item-center">
+                      <a href="#0">
+                        <div class="slider--item-image">
+                          <img src="assets/img/axem.png" alt="Axem SRL">
+                        </div>
+
+                        <div class="slider--item-description">
+                          <h3>Final Year Internship (ICT Assistant)</h3>
+                          <p class="date-work">February 2022 - June 2022</p>
+                          <ul>
+                            <li>Server Configuration</li>
+                            <li>Firewall Configuration</li>
+                            <li>Implementation of Security Systems</li>
+                            <li>Datacenter Maintenance</li>
+                            <li>Handling Customer Requests via Phone and Ticketing System</li>
+                            <li>Remote or On-Site Customer Support in Collaboration with the Support Team</li>
+                            <li>Assistance in the Implementation of IT Solutions</li>
+                          </ul>
+                        </div>
+
+                      </a>
+                    </li>
+
+
+                    <li class="slider--item slider--item-right">
+                      <a href="#0">
+                        <div class="slider--item-image">
+                          <img src="assets/img/axem.png" alt="Axem intern holiday">
+                        </div>
+
+                        <div class="slider--item-description">
+                          <h3>ICT Assistant (Intern)</h3>
+                          <p class="date-work">July 2022 - August 2022</p>
+
+                          <ul>
+                            <li>Configured servers and implemented firewall settings.</li>
+                            <li>Established a comprehensive security system.</li>
+                            <li>Performed regular maintenance in the Datacenter.</li>
+                            <li>Handled customer requests via phone and ticketing system.</li>
+                            <li>Provided remote or on-site customer support.</li>
+                            <li>Assisted in the implementation of IT solutions.</li>
+                          </ul>
+
+                        </div>
+                      </a>
+                    </li>
+
+
+
+                    <li class="slider--item slider--item-right">
+                      <a href="#0">
+                        <div class="slider--item-image">
+                          <img src="assets/img/sirius.png" alt="sirius informatique">
+                        </div>
+                        <div class="slider--item-description">
+                          <h3>Computer Technician (Intern)</h3>
+                          <p class="date-work">May 2019 - July 2019</p>
+                          <ul>
+                            <li>Provided computer and printer repair services.</li>
+                            <li>Contributed to server configuration for optimal performance.</li>
+                            <li>Assisted in troubleshooting network issues.</li>
+                          </ul>
+                        </div>
+                      </a>
+                    </li>
+                    
+
+
+                    <li class="slider--item slider--item-right">
+                      <a href="#0">
+                        <div class="slider--item-image">
+                          <img src="assets/img/nsf.png" alt="NSF euroconsultant">
+                        </div>
+                        <div class="slider--item-description">
+                          <h3>IT Technician (Intern)</h3>
+                          <p class="date-work">November 2017 - December 2017</p>
+                          <ul>
+                            <li>Managed network maintenance for servers, switches, and routers.</li>
+                            <li>Conducted routine maintenance on personal computers.</li>
+                            <li>Assisted in setting up IT infrastructure for new projects.</li>
+                          </ul>
+                        </div>
+                      </a>
+                    </li>
+
+                   
+                    
+                    <div class="slider--next">
+                      <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
+                        xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 150 118"
+                        style="enable-background:new 0 0 150 118;" xml:space="preserve">
+                        <g transform="translate(0.000000,118.000000) scale(0.100000,-0.100000)">
+                          <path
+                            d="M870,1167c-34-17-55-57-46-90c3-15,81-100,194-211l187-185l-565-1c-431,0-571-3-590-13c-55-28-64-94-18-137c21-20,33-20,597-20h575l-192-193C800,103,794,94,849,39c20-20,39-29,61-29c28,0,63,30,298,262c147,144,272,271,279,282c30,51,23,60-219,304C947,1180,926,1196,870,1167z" />
+                        </g>
+                      </svg>
+                    </div>
+                </div>
+              </div>
+            </li>
+
+            <!-- //about zone -->
+
+            <li class="l-section section">
+              <div class="about">
+                <div class="about--banner">
+                  <h2>Simple<br>Curious<br>Passionate<br>Determined</h2>
+
+                  <a href="#0">
+                 
+                  </a>
+                  <div> <img id="mendc" src="assets/img/menindatacentermatrix.jpg" alt="About Us"></div>
+                 
+                </div>
+                
+              </div>
+            </li>
+           
+
+            <!-- //Skill zone -->
+            <li class="l-section section">
+              <div class="hire">
+                <h2>You want us to do</h2>
+                <!-- checkout formspree.io for easy form setup -->
+                <form class="work-request">
+                  <div class="work-request--options">
+                    <span class="options-a">
+                      <input id="opt-1" type="checkbox" value="app design">
+                      <label for="opt-1">
+                        <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
+                          xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 150 111"
+                          style="enable-background:new 0 0 150 111;" xml:space="preserve">
+                          <g transform="translate(0.000000,111.000000) scale(0.100000,-0.100000)">
+                            <path
+                              d="M950,705L555,310L360,505C253,612,160,700,155,700c-6,0-44-34-85-75l-75-75l278-278L550-5l475,475c261,261,475,480,475,485c0,13-132,145-145,145C1349,1100,1167,922,950,705z" />
+                          </g>
+                        </svg>
+                        App Design
+                      </label>
+                      <input id="opt-2" type="checkbox" value="graphic design">
+                      <label for="opt-2">
+                        <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
+                          xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 150 111"
+                          style="enable-background:new 0 0 150 111;" xml:space="preserve">
+                          <g transform="translate(0.000000,111.000000) scale(0.100000,-0.100000)">
+                            <path
+                              d="M950,705L555,310L360,505C253,612,160,700,155,700c-6,0-44-34-85-75l-75-75l278-278L550-5l475,475c261,261,475,480,475,485c0,13-132,145-145,145C1349,1100,1167,922,950,705z" />
+                          </g>
+                        </svg>
+                        Graphic Design
+                      </label>
+                      <input id="opt-3" type="checkbox" value="motion design">
+                      <label for="opt-3">
+                        <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
+                          xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 150 111"
+                          style="enable-background:new 0 0 150 111;" xml:space="preserve">
+                          <g transform="translate(0.000000,111.000000) scale(0.100000,-0.100000)">
+                            <path
+                              d="M950,705L555,310L360,505C253,612,160,700,155,700c-6,0-44-34-85-75l-75-75l278-278L550-5l475,475c261,261,475,480,475,485c0,13-132,145-145,145C1349,1100,1167,922,950,705z" />
+                          </g>
+                        </svg>
+                        Motion Design
+                      </label>
+                    </span>
+                    <span class="options-b">
+                      <input id="opt-4" type="checkbox" value="ux design">
+                      <label for="opt-4">
+                        <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
+                          xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 150 111"
+                          style="enable-background:new 0 0 150 111;" xml:space="preserve">
+                          <g transform="translate(0.000000,111.000000) scale(0.100000,-0.100000)">
+                            <path
+                              d="M950,705L555,310L360,505C253,612,160,700,155,700c-6,0-44-34-85-75l-75-75l278-278L550-5l475,475c261,261,475,480,475,485c0,13-132,145-145,145C1349,1100,1167,922,950,705z" />
+                          </g>
+                        </svg>
+                        UX Design
+                      </label>
+                      <input id="opt-5" type="checkbox" value="webdesign">
+                      <label for="opt-5">
+                        <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
+                          xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 150 111"
+                          style="enable-background:new 0 0 150 111;" xml:space="preserve">
+                          <g transform="translate(0.000000,111.000000) scale(0.100000,-0.100000)">
+                            <path
+                              d="M950,705L555,310L360,505C253,612,160,700,155,700c-6,0-44-34-85-75l-75-75l278-278L550-5l475,475c261,261,475,480,475,485c0,13-132,145-145,145C1349,1100,1167,922,950,705z" />
+                          </g>
+                        </svg>
+                        Webdesign
+                      </label>
+                      <input id="opt-6" type="checkbox" value="marketing">
+                      <label for="opt-6">
+                        <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
+                          xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 150 111"
+                          style="enable-background:new 0 0 150 111;" xml:space="preserve">
+                          <g transform="translate(0.000000,111.000000) scale(0.100000,-0.100000)">
+                            <path
+                              d="M950,705L555,310L360,505C253,612,160,700,155,700c-6,0-44-34-85-75l-75-75l278-278L550-5l475,475c261,261,475,480,475,485c0,13-132,145-145,145C1349,1100,1167,922,950,705z" />
+                          </g>
+                        </svg>
+                        Marketing
+                      </label>
+                    </span>
+                  </div>
+                  <div class="work-request--information">
+                    <div class="information-name">
+                      <input id="name" type="text" spellcheck="false">
+                      <label for="name">Name</label>
+                    </div>
+                    <div class="information-email">
+                      <input id="email" type="email" spellcheck="false">
+                      <label for="email">Email</label>
+                    </div>
+                  </div>
+                  <input type="submit" value="Send Request">
+                </form>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <ul class="outer-nav">
+      <li class="is-active">Home</li>
+      <li>Works</li>
+      <li>About</li>
+      <li>Skills</li>
+    </ul>
+  </div>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+  <script>window.jQuery || document.write('<script src="assets/js/vendor/jquery-2.2.4.min.js"><\/script>')</script>
+  <script src="assets/js/functions-min.js"></script>
+</body>
+
+</html>
