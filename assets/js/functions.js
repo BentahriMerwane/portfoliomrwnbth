@@ -115,6 +115,7 @@ $(document).ready(function () {
     }
 
   }
+  
 
   // sync side and outer navigations
   function updateNavs(nextPos) {

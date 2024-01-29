@@ -16,38 +16,16 @@
 
 <body>
 
-  <style>
-    /* CSS for the typing effect */
-    .text-slider-items {
-      display: inline-block;
-      overflow: hidden;
-      white-space: nowrap;
-      border-right: .15em solid orange;
-      /* Adjust the typing cursor style */
-    }
-  </style>
-  <!-- notification for small viewports and landscape oriented smartphones -->
-  <div class="device-notification">
-    <a class="device-notification--logo" href="#0">
-      <img src="assets/img/logo.png" alt="ME">
-      <p></p>
-    </a>
-  </div>
-
+  <!-- This section is header -->
   <div class="perspective effect-rotate-left">
     <div class="container">
       <div class="outer-nav--return"></div>
       <div id="viewport" class="l-viewport">
         <div class="l-wrapper">
           <header class="header">
-           
 
-              <p>It's Merwane</p>
-            
+            <p>Hey it's Merwane</p>
 
-            <div class="header--nav-toggle">
-              <span></span>
-            </div>
           </header>
           <nav class="l-side-nav">
             <ul class="side-nav">
@@ -76,127 +54,6 @@
                   <canvas id="matrix"></canvas>
                   <img id="avatar" src="assets/img/avatar.png" onmouseenter="startMatrixEffect()"
                     onmouseout="stopMatrixEffect()" />
-
-                    <!-- Matrix effect behind image with canvas -->
-                  <script>
-                    // Set up canvas
-                    const canvas = document.getElementById('matrix');
-                    const ctx = canvas.getContext('2d');
-
-                    // Set canvas dimensions
-                    canvas.width = 900;
-                    canvas.height = 400;
-
-                    // Characters used for the Matrix effect
-                    const matrixChars =
-                      "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789アァカサタナハマヤャラワガザダバパイィキシチニヒミリヰギジヂビピウゥクスツヌフムユュルグズブヅプエェケセテネヘメレヱゲゼデベペオォコソトノホモヨョロヲゴゾドボポヴッン";
-                    const chars = matrixChars.split("");
-
-                    // Font settings
-                    const fontSize = 16;
-                    const columns = canvas.width / fontSize;
-                    let drops = [];
-
-                    // Initialize drops
-                    function initDrops() {
-                      for (let i = 0; i < columns; i++) {
-                        drops[i] = 1;
-                      }
-                    }
-                    initDrops();
-
-                    // Drawing function
-                    function draw() {
-                      // Black background
-                      ctx.fillStyle = "rgba(0, 0, 0, 0.04)";
-                      ctx.fillRect(0, 0, canvas.width, canvas.height);
-
-                      // Green text
-                      ctx.fillStyle = "#0F0";
-                      ctx.font = fontSize + "px arial";
-
-                      // Loop over columns
-                      for (let i = 0; i < drops.length; i++) {
-                        // Pick a random character
-                        const text = chars[Math.floor(Math.random() * chars.length)];
-
-                        // Draw character
-                        ctx.fillText(text, i * fontSize, drops[i] * fontSize);
-
-                        // Reset drop if it goes off screen
-                        if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
-                          drops[i] = 0;
-                        }
-
-                        // Increment drop
-                        drops[i]++;
-                      }
-                    }
-
-                    // Animation loop
-                    let animationId;
-
-                    function animate() {
-                      draw();
-                      animationId = requestAnimationFrame(animate);
-                    }
-
-                    // Start animation
-                    function startMatrixEffect() {
-                      animate();
-                      const context = canvas.getContext('2d');
-                      const img = new Image();
-                      img.src = 'assets/img/avatar.png';
-                      img.onload = () => {
-                        context.drawImage(img, 0, 0);
-                      };
-                    }
-
-                    // Stop animation
-                    function stopMatrixEffect() {
-                      cancelAnimationFrame(animationId);
-                      ctx.clearRect(0, 0, canvas.width, canvas.height);
-                    }
-
-                    // Adjust canvas on window resize
-                    window.addEventListener('resize', function () {
-                      canvas.width = 307;
-                      canvas.height = 307;
-                      stopMatrixEffect();
-                    });
-                  </script>
-
-                  <!-- Typing effect in home -->
-                  <script>
-                    // JavaScript for typing effect
-                    const typedElement = document.querySelector('.typed');
-                    const typedItems = typedElement.getAttribute('data-typed-items').split(',');
-                    let index = 0;
-                    let typingSpeed = 100; // Adjust typing speed here
-
-                    function typeText() {
-                      typedElement.textContent = typedItems[index].substring(0, typedElement.textContent.length + 1);
-                      if (typedElement.textContent === typedItems[index]) {
-                        setTimeout(eraseText, 2000); // Wait for 2 seconds before erasing
-                      } else {
-                        setTimeout(typeText, typingSpeed); // Continue typing
-                      }
-                    }
-
-                    function eraseText() {
-                      typedElement.textContent = typedItems[index].substring(0, typedElement.textContent.length - 1);
-                      if (typedElement.textContent === '') {
-                        index = (index + 1) % typedItems.length; // Move to next item
-                        setTimeout(typeText, typingSpeed); // Start typing next item after erasing
-                      } else {
-                        setTimeout(eraseText, typingSpeed); // Continue erasing
-                      }
-                    }
-
-                    typeText();
-                  </script>
-
-
 
 
                 </div>
@@ -470,80 +327,7 @@
                     </span>
                   </div>
 
-                  <script>
-                    var skillsData = {
-                      "Languages": [
-                        "Français",
-                        "English",
-                        "Arabic"
-                      ],
-                      "Development": [
-                        "HTML5, CSS3, Bootstrap (Front-end)",
-                        "Javascript, React (Front-end)",
-                        "Python (Back-end)",
-                        "C (System programming)",
-                        "Experience in web development"
-                      ],
-                      "Network and Telecommunications": [
-                        "Network configuration and management",
-                        "Network security and firewall",
-                        "Server administration (Linux, Windows)",
-                        "Network protocols (TCP/IP, UDP)",
-                        "VoIP infrastructure and network virtualization",
-                        "Wireless technologies (Wi-Fi)"
-                      ],
-                      "Systems": [
-                        "System administration (Linux, Windows)",
-                        "User management, rights, and security",
-                        "Server configuration (Apache, Nginx)",
-                        "Task automation (Shell scripting)",
-                        "System monitoring and maintenance",
-                        "Preventive and corrective maintenance",
-                        "System integration"
-                      ],
-                      "Database": [
-                        "MySQL, MariaDB, MongoDB",
-                        "Data modeling and optimization",
-                        "Experience in data backup and recovery"
-                      ],
-                      "Certifications": [
-                        "Fortinet NSE1/NSE2",
-                        "Veeam Backup & Replication"
-                      ]
-                    };
 
-
-                    var lastChecked = null;
-
-                    function logSkills(checkbox) {
-                      var skillName = checkbox.value;
-                      var skillValues = skillsData[skillName];
-
-                      var selectedValuesContainer = document.getElementById("item-skills");
-
-
-
-                      if (lastChecked !== null && lastChecked !== checkbox) {
-                        lastChecked.checked = false;
-                      }
-                      lastChecked = checkbox;
-                      if (checkbox.checked) {
-
-                        selectedValuesContainer.innerHTML = "<ul></ul>"
-
-                        skillValues.forEach(function (value) {
-
-
-                          var listItem = document.createElement("li");
-                          listItem.textContent = "‣ " + value;
-                          selectedValuesContainer.appendChild(listItem);
-
-                        });
-
-                      }
-
-                    }
-                  </script>
 
                   <div id="item-skills" class="item-skills">
                     <!-- Content will be dynamically added here -->
@@ -568,6 +352,11 @@
     window.jQuery || document.write('<script src="assets/js/vendor/jquery-2.2.4.min.js"><\/script>')
   </script>
   <script src="assets/js/functions-min.js"></script>
+
+  <!--Personale js file for matrix effect and typing-->
+  <script src="assets/js/matrix.js"></script>
+  <script src="assets/js/typingeffect.js"></script>
+  <script src="assets/js/checkboxselect.js"></script>
 </body>
 
 </html>
