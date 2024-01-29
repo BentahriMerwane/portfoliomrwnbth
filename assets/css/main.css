@@ -1146,6 +1146,13 @@ body {
     }
 }
 
+#mendc {
+    width: 50%;
+    height: 90%;
+    top: 0;
+    left: 0;
+}
+
 .about--banner {
     position: relative;
     height: 475px
@@ -1176,12 +1183,16 @@ body {
 }
 
 .about--banner h2 {
-    position: relative;
-    margin-top: 35px;
-    font-size: 68px;
+
+    position: absolute;
+    font-size: 40px;
     font-weight: 900;
     line-height: 1;
-    z-index: 1
+    z-index: 1;
+    color: #5d5d5e;
+    bottom: 0;
+    left: 0;
+
 }
 
 .about--banner h2::before {
@@ -1876,13 +1887,15 @@ body {
 
 #matrix {
     position: absolute;
-    bottom: 50px;
-    /* Adjust the distance from top */
-    right: 20px;
-    /* Adjust the distance from right */
+    bottom: 20px;
+
+    right: 0;
+
     z-index: 0;
-    background-color: black;
+
 }
+
+
 
 
 
@@ -1899,13 +1912,6 @@ body {
 }
 
 
-#mendc {
-    width: 50%;
-    height: 90%;
-    bottom: 0;
-    left: 0;
-
-}
 
 .timeline-container {
     display: flex;
@@ -1953,81 +1959,124 @@ body {
 /* Style for Education section */
 .education {
 
-    padding: 20px; /* Padding around the content */
-    border-radius: 5px; /* Rounded corners */
+    padding: 20px;
+    /* Padding around the content */
+    border-radius: 5px;
+    /* Rounded corners */
     position: absolute;
     top: 0;
     right: 0;
- 
-   
-    padding: 20px; /* Padding around the content */
-    border-radius: 5px; /* Rounded corners */
-  }
-  
-  /* Style for Resume Title */
-  .resume-title {
-    color: #1e69cc; /* Text color */
-    font-size: 24px; /* Font size */
-    margin-bottom: 15px; /* Spacing at the bottom */
-    position: relative; /* Relative positioning */
-  }
-  
-  /* Add line with space to the left */
-  .resume-title::before {
+
+
+    padding: 20px;
+    /* Padding around the content */
+    border-radius: 5px;
+    /* Rounded corners */
+}
+
+/* Style for Resume Title */
+.resume-title {
+    color: #1e69cc;
+    /* Text color */
+    font-size: 24px;
+    /* Font size */
+    margin-bottom: 15px;
+    /* Spacing at the bottom */
+    position: relative;
+    /* Relative positioning */
+}
+
+/* Add line with space to the left */
+.resume-title::before {
     content: '';
     position: absolute;
-    left: -10px; /* Adjust space */
+    left: -10px;
+    /* Adjust space */
     top: 0;
     bottom: 0;
-    width: 2px; /* Line width */
-    background-color: #007bff; /* Line color */
-  }
-  
-  /* Style for each resume item */
-  .resume-item {
-    margin-bottom: 15px; /* Spacing between items */
-    padding-left: 20px; /* Adjust space for the content */
-    position: relative; /* Relative positioning */
-  }
-  
-  /* Style for the line between resume items */
-  .resume-item::before {
+    width: 2px;
+    /* Line width */
+    background-color: #007bff;
+    /* Line color */
+}
+
+/* Style for each resume item */
+.resume-item {
+    margin-bottom: 15px;
+    /* Spacing between items */
+    padding-left: 20px;
+    /* Adjust space for the content */
+    position: relative;
+    /* Relative positioning */
+}
+
+/* Style for the line between resume items */
+.resume-item::before {
     content: '';
     position: absolute;
-    left: -10px; /* Adjust space */
+    left: -10px;
+    /* Adjust space */
     top: 0;
     bottom: 0;
-    width: 2px; /* Line width */
-    background-color: #ccc; /* Line color */
-  }
-  
-  /* Style for the heading of each resume item */
-  .resume-item h4 {
-    color: #007bff; /* Heading color */
-    font-size: 18px; /* Font size */
-    margin-bottom: 5px; /* Spacing at the bottom */
-  }
-  
-  /* Style for the date of each resume item */
-  .resume-item h5 {
-    color: #555; /* Date color */
-    font-size: 16px; /* Font size */
-    margin-bottom: 5px; /* Spacing at the bottom */
-  }
-  
-  /* Style for the location/emphasis of each resume item */
-  .resume-item p em {
-    color: #777; /* Emphasis color */
-  }
-  
-  /* Style for the list items */
-  .resume-item ul {
-    list-style-type: none; /* Remove bullet points */
-    padding-left: 0; /* Remove default left padding */
-  }
-  
-  /* Style for each list item */
-  .resume-item ul li {
-    margin-bottom: 5px; /* Spacing between items */
-  }
-  
+    width: 2px;
+    /* Line width */
+    background-color: #ccc;
+    /* Line color */
+}
+
+/* Style for the heading of each resume item */
+.resume-item h4 {
+    color: #007bff;
+    /* Heading color */
+    font-size: 18px;
+    /* Font size */
+    margin-bottom: 5px;
+    /* Spacing at the bottom */
+}
+
+/* Style for the date of each resume item */
+.resume-item h5 {
+    color: #555;
+    /* Date color */
+    font-size: 16px;
+    /* Font size */
+    margin-bottom: 5px;
+    /* Spacing at the bottom */
+}
+
+/* Style for the location/emphasis of each resume item */
+.resume-item p em {
+    color: #777;
+    /* Emphasis color */
+}
+
+/* Style for the list items */
+.resume-item ul {
+    list-style-type: none;
+    /* Remove bullet points */
+    padding-left: 0;
+    /* Remove default left padding */
+}
+
+/* Style for each list item */
+.resume-item ul li {
+    margin-bottom: 5px;
+    /* Spacing between items */
+}
+
+
+/*skill item*/
+
+.item-skills {
+
+    padding: 10px;
+    /* Padding around each item */
+    margin-bottom: 5px;
+    /* Margin between each item */
+    border-radius: 5px;
+    /* Rounded corners */
+    font-size: 18px;
+    /* Font size */
+    color: #7e9de0;
+    /* Text color */
+}

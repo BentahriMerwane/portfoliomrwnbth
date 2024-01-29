@@ -22,8 +22,7 @@ $(document).ready(function () {
           canScroll = true;
         }, 800);
         updateHelper(1);
-      }
-      else if (delta < -50 && canScroll) {
+      } else if (delta < -50 && canScroll) {
         canScroll = false;
         clearTimeout(scrollController);
         scrollController = setTimeout(function () {
@@ -68,7 +67,9 @@ $(document).ready(function () {
   // swipe support for touch devices
   var targetElement = document.getElementById('viewport'),
     mc = new Hammer(targetElement);
-  mc.get('swipe').set({ direction: Hammer.DIRECTION_VERTICAL });
+  mc.get('swipe').set({
+    direction: Hammer.DIRECTION_VERTICAL
+  });
   mc.on('swipeup swipedown', function (e) {
 
     updateHelper(e);
@@ -97,19 +98,16 @@ $(document).ready(function () {
         nextPos = curPos + 1;
         updateNavs(nextPos);
         updateContent(curPos, nextPos, lastItem);
-      }
-      else {
+      } else {
         updateNavs(nextPos);
         updateContent(curPos, nextPos, lastItem);
       }
-    }
-    else if (param.type === "swipedown" || param.keyCode === 38 || param < 0) {
+    } else if (param.type === "swipedown" || param.keyCode === 38 || param < 0) {
       if (curPos !== 0) {
         nextPos = curPos - 1;
         updateNavs(nextPos);
         updateContent(curPos, nextPos, lastItem);
-      }
-      else {
+      } else {
         nextPos = lastItem;
         updateNavs(nextPos);
         updateContent(curPos, nextPos, lastItem);
@@ -136,18 +134,15 @@ $(document).ready(function () {
 
     if (curPos === lastItem && nextPos === 0 || curPos === 0 && nextPos === lastItem) {
       $('.main-content .section').children().removeClass('section--next section--prev');
-    }
-    else if (curPos < nextPos) {
+    } else if (curPos < nextPos) {
       $('.main-content').children().eq(curPos).children().addClass('section--next');
-    }
-    else {
+    } else {
       $('.main-content').children().eq(curPos).children().addClass('section--prev');
     }
 
     if (nextPos !== 0 && nextPos !== lastItem) {
       $('.header--cta').addClass('is-active');
-    }
-    else {
+    } else {
       $('.header--cta').removeClass('is-active');
     }
 
@@ -194,7 +189,9 @@ $(document).ready(function () {
         $right = $('.slider--item-right'),
         $item = $('.slider--item');
 
-      $('.slider').animate({ opacity: 0 }, 400);
+      $('.slider').animate({
+        opacity: 0
+      }, 400);
 
       setTimeout(function () {
 
@@ -203,43 +200,36 @@ $(document).ready(function () {
             $left.removeClass('slider--item-left').next().addClass('slider--item-left');
             $center.removeClass('slider--item-center').next().addClass('slider--item-center');
             $right.removeClass('slider--item-right').next().addClass('slider--item-right');
-          }
-          else {
+          } else {
             if (curLeftPos === totalWorks - 1) {
               $item.removeClass('slider--item-left').first().addClass('slider--item-left');
               $center.removeClass('slider--item-center').next().addClass('slider--item-center');
               $right.removeClass('slider--item-right').next().addClass('slider--item-right');
-            }
-            else if (curCenterPos === totalWorks - 1) {
+            } else if (curCenterPos === totalWorks - 1) {
               $left.removeClass('slider--item-left').next().addClass('slider--item-left');
               $item.removeClass('slider--item-center').first().addClass('slider--item-center');
               $right.removeClass('slider--item-right').next().addClass('slider--item-right');
-            }
-            else {
+            } else {
               $left.removeClass('slider--item-left').next().addClass('slider--item-left');
               $center.removeClass('slider--item-center').next().addClass('slider--item-center');
               $item.removeClass('slider--item-right').first().addClass('slider--item-right');
             }
           }
-        }
-        else {
+        } else {
           if (curLeftPos !== 0 && curCenterPos !== 0 && curRightPos !== 0) {
             $left.removeClass('slider--item-left').prev().addClass('slider--item-left');
             $center.removeClass('slider--item-center').prev().addClass('slider--item-center');
             $right.removeClass('slider--item-right').prev().addClass('slider--item-right');
-          }
-          else {
+          } else {
             if (curLeftPos === 0) {
               $item.removeClass('slider--item-left').last().addClass('slider--item-left');
               $center.removeClass('slider--item-center').prev().addClass('slider--item-center');
               $right.removeClass('slider--item-right').prev().addClass('slider--item-right');
-            }
-            else if (curCenterPos === 0) {
+            } else if (curCenterPos === 0) {
               $left.removeClass('slider--item-left').prev().addClass('slider--item-left');
               $item.removeClass('slider--item-center').last().addClass('slider--item-center');
               $right.removeClass('slider--item-right').prev().addClass('slider--item-right');
-            }
-            else {
+            } else {
               $left.removeClass('slider--item-left').prev().addClass('slider--item-left');
               $center.removeClass('slider--item-center').prev().addClass('slider--item-center');
               $item.removeClass('slider--item-right').last().addClass('slider--item-right');
@@ -249,7 +239,9 @@ $(document).ready(function () {
 
       }, 400);
 
-      $('.slider').animate({ opacity: 1 }, 400);
+      $('.slider').animate({
+        opacity: 1
+      }, 400);
 
     });
 
@@ -263,8 +255,7 @@ $(document).ready(function () {
 
       if (textVal === "") {
         $(this).removeClass('has-value');
-      }
-      else {
+      } else {
         $(this).addClass('has-value');
       }
 
@@ -282,5 +273,3 @@ $(document).ready(function () {
 
 
 });
-
-

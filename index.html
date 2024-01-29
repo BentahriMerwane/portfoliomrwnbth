@@ -41,7 +41,7 @@
         <div class="l-wrapper">
           <header class="header">
             <a class="header--logo" href="#0">
-              <img src="assets/img/logo.png" alt="Global">
+
               <p>It's Merwane</p>
             </a>
 
@@ -74,31 +74,36 @@
                     </span></h1>
 
                   <canvas id="matrix"></canvas>
+                  <img id="avatar" src="assets/img/avatar.png" onmouseenter="startMatrixEffect()"
+                    onmouseout="stopMatrixEffect()" />
 
-
+                    <!-- Matrix effect behind image with canvas -->
                   <script>
-
                     // Set up canvas
                     const canvas = document.getElementById('matrix');
                     const ctx = canvas.getContext('2d');
 
                     // Set canvas dimensions
-                    canvas.width = 307;
-                    canvas.height = 307;
+                    canvas.width = 900;
+                    canvas.height = 400;
 
                     // Characters used for the Matrix effect
-                    const matrixChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789アァカサタナハマヤャラワガザダバパイィキシチニヒミリヰギジヂビピウゥクスツヌフムユュルグズブヅプエェケセテネヘメレヱゲゼデベペオォコソトノホモヨョロヲゴゾドボポヴッン";
+                    const matrixChars =
+                      "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789アァカサタナハマヤャラワガザダバパイィキシチニヒミリヰギジヂビピウゥクスツヌフムユュルグズブヅプエェケセテネヘメレヱゲゼデベペオォコソトノホモヨョロヲゴゾドボポヴッン";
                     const chars = matrixChars.split("");
 
                     // Font settings
                     const fontSize = 16;
                     const columns = canvas.width / fontSize;
-                    const drops = [];
+                    let drops = [];
 
                     // Initialize drops
-                    for (let i = 0; i < columns; i++) {
-                      drops[i] = 1;
+                    function initDrops() {
+                      for (let i = 0; i < columns; i++) {
+                        drops[i] = 1;
+                      }
                     }
+                    initDrops();
 
                     // Drawing function
                     function draw() {
@@ -129,30 +134,39 @@
                     }
 
                     // Animation loop
+                    let animationId;
+
                     function animate() {
                       draw();
-                      requestAnimationFrame(animate);
-                      document.getElementById('canvas');
-                      const context = canvas.getContext('2d');
-                      const img = new Image();
-                      img.src = 'assets/img/avatar.png';
-                      img.onload = () => { context.drawImage(img, 0, 0); };
-
+                      animationId = requestAnimationFrame(animate);
                     }
 
                     // Start animation
-                    animate();
+                    function startMatrixEffect() {
+                      animate();
+                      const context = canvas.getContext('2d');
+                      const img = new Image();
+                      img.src = 'assets/img/avatar.png';
+                      img.onload = () => {
+                        context.drawImage(img, 0, 0);
+                      };
+                    }
+
+                    // Stop animation
+                    function stopMatrixEffect() {
+                      cancelAnimationFrame(animationId);
+                      ctx.clearRect(0, 0, canvas.width, canvas.height);
+                    }
+
                     // Adjust canvas on window resize
                     window.addEventListener('resize', function () {
-
-                      drops = [];
-                      for (let i = 0; i < columns; i++) {
-                        drops[i] = 1;
-                      }
-
+                      canvas.width = 307;
+                      canvas.height = 307;
+                      stopMatrixEffect();
                     });
-
                   </script>
+
+                  <!-- Typing effect in home -->
                   <script>
                     // JavaScript for typing effect
                     const typedElement = document.querySelector('.typed');
@@ -215,115 +229,6 @@
 
                 <div class="work--lockup">
                   <ul class="slider">
-                    <li class="slider--item slider--item-left">
-                      <a href="#0">
-                        <div class="slider--item-image">
-                          <img src="assets/img/ottclinic.png" alt="ottigniesclinic">
-                        </div>
-
-                        <div class="slider--item-description">
-                          <h3>Helpdesk Support Specialist</h3>
-                          <p class="date-work">August 2022 - September 2022</p>
-                          <ul>
-                            <li>Provide First-Level Support</li>
-                            <li>Printer Installation and Configuration</li>
-                            <li>Ticket Management</li>
-                            <li>Collaboration with IT Teams</li>
-                            <li>Documentation</li>
-                            <li>Customer Service</li>
-                          </ul>
-                        </div>
-
-                      </a>
-                    </li>
-
-                    <li class="slider--item slider--item-center">
-                      <a href="#0">
-                        <div class="slider--item-image">
-                          <img src="assets/img/axem.png" alt="Axem SRL">
-                        </div>
-
-                        <div class="slider--item-description">
-                          <h3>Final Year Internship (ICT Assistant)</h3>
-                          <p class="date-work">February 2022 - June 2022</p>
-                          <ul>
-                            <li>Server Configuration</li>
-                            <li>Firewall Configuration</li>
-                            <li>Implementation of Security Systems</li>
-                            <li>Datacenter Maintenance</li>
-                            <li>Handling Customer Requests via Phone and Ticketing System</li>
-                            <li>Remote or On-Site Customer Support in Collaboration with the Support Team</li>
-                            <li>Assistance in the Implementation of IT Solutions</li>
-                          </ul>
-                        </div>
-
-                      </a>
-                    </li>
-
-
-                    <li class="slider--item slider--item-right">
-                      <a href="#0">
-                        <div class="slider--item-image">
-                          <img src="assets/img/axem.png" alt="Axem intern holiday">
-                        </div>
-
-                        <div class="slider--item-description">
-                          <h3>ICT Assistant (Intern)</h3>
-                          <p class="date-work">July 2022 - August 2022</p>
-
-                          <ul>
-                            <li>Configured servers and implemented firewall settings.</li>
-                            <li>Established a comprehensive security system.</li>
-                            <li>Performed regular maintenance in the Datacenter.</li>
-                            <li>Handled customer requests via phone and ticketing system.</li>
-                            <li>Provided remote or on-site customer support.</li>
-                            <li>Assisted in the implementation of IT solutions.</li>
-                          </ul>
-
-                        </div>
-                      </a>
-                    </li>
-
-
-
-                    <li class="slider--item slider--item-right">
-                      <a href="#0">
-                        <div class="slider--item-image">
-                          <img src="assets/img/sirius.png" alt="sirius informatique">
-                        </div>
-                        <div class="slider--item-description">
-                          <h3>Computer Technician (Intern)</h3>
-                          <p class="date-work">May 2019 - July 2019</p>
-                          <ul>
-                            <li>Provided computer and printer repair services.</li>
-                            <li>Contributed to server configuration for optimal performance.</li>
-                            <li>Assisted in troubleshooting network issues.</li>
-                          </ul>
-                        </div>
-                      </a>
-                    </li>
-
-
-
-                    <li class="slider--item slider--item-right">
-                      <a href="#0">
-                        <div class="slider--item-image">
-                          <img src="assets/img/nsf.png" alt="NSF euroconsultant">
-                        </div>
-                        <div class="slider--item-description">
-                          <h3>IT Technician (Intern)</h3>
-                          <p class="date-work">November 2017 - December 2017</p>
-                          <ul>
-                            <li>Managed network maintenance for servers, switches, and routers.</li>
-                            <li>Conducted routine maintenance on personal computers.</li>
-                            <li>Assisted in setting up IT infrastructure for new projects.</li>
-                          </ul>
-                        </div>
-                      </a>
-                    </li>
-
-
-
                     <div class="slider--next">
                       <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
                         xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 150 118"
@@ -334,6 +239,106 @@
                         </g>
                       </svg>
                     </div>
+                    <li class="slider--item slider--item-left">
+
+
+
+                      <div class="slider--item-description">
+                        <h3>Helpdesk Support Specialist</h3>
+                        <p class="date-work">August 2022 - September 2022</p>
+                        <ul>
+                          <li>Provide First-Level Support</li>
+                          <li>Printer Installation and Configuration</li>
+                          <li>Ticket Management</li>
+                          <li>Collaboration with IT Teams</li>
+                          <li>Documentation</li>
+                          <li>Customer Service</li>
+                        </ul>
+                      </div>
+
+
+                    </li>
+
+                    <li class="slider--item slider--item-center">
+
+
+
+                      <div class="slider--item-description">
+                        <h3>Final Year Internship (ICT Assistant)</h3>
+                        <p class="date-work">February 2022 - June 2022</p>
+                        <ul>
+                          <li>Server Configuration</li>
+                          <li>Firewall Configuration</li>
+                          <li>Implementation of Security Systems</li>
+                          <li>Datacenter Maintenance</li>
+                          <li>Handling Customer Requests via Phone and Ticketing System</li>
+                          <li>Remote or On-Site Customer Support in Collaboration with the Support Team</li>
+                          <li>Assistance in the Implementation of IT Solutions</li>
+                        </ul>
+                      </div>
+
+
+                    </li>
+
+
+                    <li class="slider--item slider--item-right">
+
+
+
+                      <div class="slider--item-description">
+                        <h3>ICT Assistant (Intern)</h3>
+                        <p class="date-work">July 2022 - August 2022</p>
+
+                        <ul>
+                          <li>Configured servers and implemented firewall settings.</li>
+                          <li>Established a comprehensive security system.</li>
+                          <li>Performed regular maintenance in the Datacenter.</li>
+                          <li>Handled customer requests via phone and ticketing system.</li>
+                          <li>Provided remote or on-site customer support.</li>
+                          <li>Assisted in the implementation of IT solutions.</li>
+                        </ul>
+
+                      </div>
+
+                    </li>
+
+
+
+                    <li class="slider--item slider--item-right">
+
+
+                      <div class="slider--item-description">
+                        <h3>Computer Technician (Intern)</h3>
+                        <p class="date-work">May 2019 - July 2019</p>
+                        <ul>
+                          <li>Provided computer and printer repair services.</li>
+                          <li>Contributed to server configuration for optimal performance.</li>
+                          <li>Assisted in troubleshooting network issues.</li>
+                        </ul>
+                      </div>
+
+                    </li>
+
+
+
+                    <li class="slider--item slider--item-right">
+
+
+                      <div class="slider--item-description">
+                        <h3>IT Technician (Intern)</h3>
+                        <p class="date-work">November 2017 - December 2017</p>
+                        <ul>
+                          <li>Managed network maintenance for servers, switches, and routers.</li>
+                          <li>Conducted routine maintenance on personal computers.</li>
+                          <li>Assisted in setting up IT infrastructure for new projects.</li>
+                        </ul>
+                      </div>
+
+                    </li>
+
+
+
+
                 </div>
               </div>
             </li>
@@ -343,7 +348,7 @@
             <li class="l-section section">
               <div class="about">
                 <div class="about--banner">
-                  <h2>Simple<br>Curious<br>Passionate<br>Determined</h2>
+
                   <div class="education">
                     <h3 class="resume-title">Education</h3>
                     <div class="resume-item">
@@ -365,29 +370,27 @@
                     </div>
                   </div>
 
+
                   <a href="#0">
 
                   </a>
-                  <div> <img id="mendc" src="assets/img/menindatacentermatrix.jpg" alt="About Us"></div> 
+                  <div> <img id="mendc" src="assets/img/menindatacentermatrix.jpg" alt="About Us">
+
+                  </div>
+                  <h2>Simple<br>Curious<br>Passionate<br>Determined</h2>
                 </div>
 
               </div>
-
-
-
-
             </li>
-
 
             <!-- //Skill zone -->
             <li class="l-section section">
               <div class="hire">
-                <h2>You want us to do</h2>
-                <!-- checkout formspree.io for easy form setup -->
+
                 <form class="work-request">
                   <div class="work-request--options">
                     <span class="options-a">
-                      <input id="opt-1" type="checkbox" value="app design">
+                      <input id="opt-1" type="checkbox" value="Languages" onclick="logSkills(this)">
                       <label for="opt-1">
                         <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
                           xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 150 111"
@@ -397,9 +400,9 @@
                               d="M950,705L555,310L360,505C253,612,160,700,155,700c-6,0-44-34-85-75l-75-75l278-278L550-5l475,475c261,261,475,480,475,485c0,13-132,145-145,145C1349,1100,1167,922,950,705z" />
                           </g>
                         </svg>
-                        App Design
+                        Languages
                       </label>
-                      <input id="opt-2" type="checkbox" value="graphic design">
+                      <input id="opt-2" type="checkbox" value="Development" onclick="logSkills(this)">
                       <label for="opt-2">
                         <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
                           xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 150 111"
@@ -409,9 +412,10 @@
                               d="M950,705L555,310L360,505C253,612,160,700,155,700c-6,0-44-34-85-75l-75-75l278-278L550-5l475,475c261,261,475,480,475,485c0,13-132,145-145,145C1349,1100,1167,922,950,705z" />
                           </g>
                         </svg>
-                        Graphic Design
+                        Development
                       </label>
-                      <input id="opt-3" type="checkbox" value="motion design">
+                      <input id="opt-3" type="checkbox" value="Network and Telecommunications"
+                        onclick="logSkills(this)">
                       <label for="opt-3">
                         <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
                           xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 150 111"
@@ -421,11 +425,11 @@
                               d="M950,705L555,310L360,505C253,612,160,700,155,700c-6,0-44-34-85-75l-75-75l278-278L550-5l475,475c261,261,475,480,475,485c0,13-132,145-145,145C1349,1100,1167,922,950,705z" />
                           </g>
                         </svg>
-                        Motion Design
+                        Network and Telecommunications
                       </label>
                     </span>
                     <span class="options-b">
-                      <input id="opt-4" type="checkbox" value="ux design">
+                      <input id="opt-4" type="checkbox" value="Systems" onclick="logSkills(this)">
                       <label for="opt-4">
                         <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
                           xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 150 111"
@@ -435,9 +439,9 @@
                               d="M950,705L555,310L360,505C253,612,160,700,155,700c-6,0-44-34-85-75l-75-75l278-278L550-5l475,475c261,261,475,480,475,485c0,13-132,145-145,145C1349,1100,1167,922,950,705z" />
                           </g>
                         </svg>
-                        UX Design
+                        Systems
                       </label>
-                      <input id="opt-5" type="checkbox" value="webdesign">
+                      <input id="opt-5" type="checkbox" value="Database" onclick="logSkills(this)">
                       <label for="opt-5">
                         <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
                           xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 150 111"
@@ -447,9 +451,10 @@
                               d="M950,705L555,310L360,505C253,612,160,700,155,700c-6,0-44-34-85-75l-75-75l278-278L550-5l475,475c261,261,475,480,475,485c0,13-132,145-145,145C1349,1100,1167,922,950,705z" />
                           </g>
                         </svg>
-                        Webdesign
+                        Database
                       </label>
-                      <input id="opt-6" type="checkbox" value="marketing">
+
+                      <input id="opt-6" type="checkbox" value="Certifications" onclick="logSkills(this)">
                       <label for="opt-6">
                         <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
                           xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 150 111"
@@ -459,23 +464,92 @@
                               d="M950,705L555,310L360,505C253,612,160,700,155,700c-6,0-44-34-85-75l-75-75l278-278L550-5l475,475c261,261,475,480,475,485c0,13-132,145-145,145C1349,1100,1167,922,950,705z" />
                           </g>
                         </svg>
-                        Marketing
+                        Certifications
                       </label>
+
                     </span>
                   </div>
-                  <div class="work-request--information">
-                    <div class="information-name">
-                      <input id="name" type="text" spellcheck="false">
-                      <label for="name">Name</label>
-                    </div>
-                    <div class="information-email">
-                      <input id="email" type="email" spellcheck="false">
-                      <label for="email">Email</label>
-                    </div>
+
+                  <script>
+                    var skillsData = {
+                      "Languages": [
+                        "Français",
+                        "English",
+                        "Arabic"
+                      ],
+                      "Development": [
+                        "HTML5, CSS3, Bootstrap (Front-end)",
+                        "Javascript, React (Front-end)",
+                        "Python (Back-end)",
+                        "C (System programming)",
+                        "Experience in web development"
+                      ],
+                      "Network and Telecommunications": [
+                        "Network configuration and management",
+                        "Network security and firewall",
+                        "Server administration (Linux, Windows)",
+                        "Network protocols (TCP/IP, UDP)",
+                        "VoIP infrastructure and network virtualization",
+                        "Wireless technologies (Wi-Fi)"
+                      ],
+                      "Systems": [
+                        "System administration (Linux, Windows)",
+                        "User management, rights, and security",
+                        "Server configuration (Apache, Nginx)",
+                        "Task automation (Shell scripting)",
+                        "System monitoring and maintenance",
+                        "Preventive and corrective maintenance",
+                        "System integration"
+                      ],
+                      "Database": [
+                        "MySQL, MariaDB, MongoDB",
+                        "Data modeling and optimization",
+                        "Experience in data backup and recovery"
+                      ],
+                      "Certifications": [
+                        "Fortinet NSE1/NSE2",
+                        "Veeam Backup & Replication"
+                      ]
+                    };
+
+
+                    var lastChecked = null;
+
+                    function logSkills(checkbox) {
+                      var skillName = checkbox.value;
+                      var skillValues = skillsData[skillName];
+
+                      var selectedValuesContainer = document.getElementById("item-skills");
+
+
+
+                      if (lastChecked !== null && lastChecked !== checkbox) {
+                        lastChecked.checked = false;
+                      }
+                      lastChecked = checkbox;
+                      if (checkbox.checked) {
+
+                        selectedValuesContainer.innerHTML = "<ul></ul>"
+
+                        skillValues.forEach(function (value) {
+
+
+                          var listItem = document.createElement("li");
+                          listItem.textContent = "‣ " + value;
+                          selectedValuesContainer.appendChild(listItem);
+
+                        });
+
+                      }
+
+                    }
+                  </script>
+
+                  <div id="item-skills" class="item-skills">
+                    <!-- Content will be dynamically added here -->
                   </div>
-                  <input type="submit" value="Send Request">
-                </form>
-              </div>
+
+
             </li>
           </ul>
         </div>
@@ -490,7 +564,9 @@
   </div>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-  <script>window.jQuery || document.write('<script src="assets/js/vendor/jquery-2.2.4.min.js"><\/script>')</script>
+  <script>
+    window.jQuery || document.write('<script src="assets/js/vendor/jquery-2.2.4.min.js"><\/script>')
+  </script>
   <script src="assets/js/functions-min.js"></script>
 </body>
 
