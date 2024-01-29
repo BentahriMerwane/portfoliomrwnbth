@@ -304,6 +304,7 @@ body {
 
 .l-side-nav {
     position: absolute;
+    
     left: 0;
     display: -webkit-box;
     display: -webkit-flex;
@@ -314,6 +315,7 @@ body {
     -webkit-align-items: center;
     -ms-flex-align: center;
     align-items: center
+    
 }
 
 .l-side-nav::before {
