@@ -739,7 +739,7 @@ body {
 
 .intro--banner h1 {
     position: relative;
-    font-size: 68px;
+    font-size: 50px;
     font-weight: 900;
     line-height: 1;
     z-index: 1
@@ -1904,14 +1904,15 @@ body {
 
 
 .date-work {
-    color: blue;
+    color: rgb(97, 97, 168);
     /* Change color as desired */
-    font-size: 16px;
+    font-size: 18px;
     /* Adjust font size as needed */
 }
 
 .slider--item-description ul li {
     text-align: left;
+    font-size: 17px;
 }
 
 
@@ -2092,3 +2093,5 @@ body {
     border-right: .15em solid orange;
     /* Adjust the typing cursor style */
   }
+
+  
