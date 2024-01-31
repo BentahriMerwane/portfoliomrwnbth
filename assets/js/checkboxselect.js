@@ -74,7 +74,7 @@ function logSkills(checkbox) {
           link.href = pdf.link;
           link.textContent = pdf.name;
           link.target = "_blank"; // Open link in a new tab
-          
+          link.classList.add("certification-link"); // Add the class to the link
           subListItem.appendChild(link);
           sublist.appendChild(subListItem);
         });

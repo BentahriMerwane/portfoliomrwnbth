@@ -1271,3 +1271,13 @@ body {
 }
 
 /* Css */
+.certification-link {
+    color: #007bff; /* Blue color for links */
+    text-decoration: none; /* Remove default underline */
+    transition: color 0.3s; /* Smooth color transition on hover */
+  }
+  
+  .certification-link:hover {
+    color: #0056b3; /* Darker blue color on hover */
+  }
+  
