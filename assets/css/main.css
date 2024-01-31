@@ -485,13 +485,6 @@ body {
     margin: 0 auto
 }
 
-@media (max-width: 1180px) {
-    .work {
-        max-width: 100%
-    }
-
-
-}
 
 .work h2 {
     margin: 0 0 20px 0;
@@ -593,9 +586,6 @@ body {
     /* Increase the size on hover */
 }
 
-
-
-
 /* CSS for mobile devices */
 @media only screen and (max-width: 767px) {
     /* Adjust the layout to fit smaller screens */
@@ -609,12 +599,20 @@ body {
       margin-bottom: 50px;
     }
   
-  
-  
     .slider--next {
       display: none; /* Hide the next button on mobile */
+      /* Add styles specific to phone screens here */
+      /* For example, you can adjust size or positioning */
+      width: 40px;
+      height: 40px;
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      border-radius: 50%;
+      box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+      padding: 10px;
     }
-  
+
     /* Reduce the font size of h2 elements */
     .slider--item-description h2 {
       font-size: 1.2rem; /* Adjust as needed */
@@ -624,27 +622,21 @@ body {
     .slider--item-description p.description {
       font-size: 0.9rem; /* Adjust as needed */
     }
-    .slider--next {
-        /* Add styles specific to phone screens here */
-        /* For example, you can adjust size or positioning */
-        width: 40px;
-        height: 40px;
-        position: fixed;
-        bottom: 20px;
-        right: 20px;
-   
-        border-radius: 50%;
-        box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
-        padding: 10px;
-    }
 
     /* You may need to adjust SVG size or styles accordingly */
     .slider--next svg {
-        width: 50%;
-        height: 50%;
-        fill: #333; /* Change color as needed */
+      width: 50%;
+      height: 50%;
+      fill: #333; /* Change color as needed */
     }
-  }
+}
+
+@media (max-width: 1180px) {
+    .work {
+        max-width: 100%;
+    }
+}
+
   
 
 
@@ -674,57 +666,7 @@ body {
     margin: 0 auto
 }
 
-@media (max-width: 1180px) {
-    .education {
-        max-width: 100%
-    }
 
-    #mendc {
-        display: none;
-    }
-
-    .education {
-        max-width: 100%
-    }
-
-  
-    .resume-item {
-      margin-bottom: 15px;
-    }
-  
-    /* Reduce the font size of h3 elements */
-    .resume-title {
-      font-size: 1.2rem; /* Adjust as needed */
-    }
-  
-    /* Reduce the font size of h4 elements */
-    .resume-item h4 {
-      font-size: 1rem; /* Adjust as needed */
-    }
-  
-    /* Reduce the font size of h5 elements */
-    .resume-item h5 {
-      font-size: 0.9rem; /* Adjust as needed */
-    }
-  
-    /* Reduce the font size of p elements */
-    .resume-item p {
-      font-size: 0.9rem; /* Adjust as needed */
-    }
-    .about--banner h2 {
-        font-size: 1rem; /* Adjust as needed */
-        margin-top: 20px; /* Adjust as needed */
-      }
-    
-      .about--banner h2 a.cvlinks {
-        font-size: 0.8rem; /* Adjust as needed */
-        position: absolute;
-        bottom: 0;
-        right: 0;
-      
-      }
-     
-  }
   
 
 
@@ -834,11 +776,7 @@ body {
     margin: 0 auto
 }
 
-@media (max-width: 1180px) {
-    .hire {
-        max-width: 100%
-    }
-}
+
 
 .work-request {
     display: -webkit-box;
@@ -938,51 +876,7 @@ body {
     width: 15px
 }
 
-@media (max-width: 767px) {
-    .work-request--options {
-        -webkit-box-orient: horizontal;
-        -webkit-box-direction: normal;
-        -webkit-flex-direction: row;
-        -ms-flex-direction: row;
-        flex-direction: row;
-        -webkit-justify-content: space-around;
-        -ms-flex-pack: distribute;
-        justify-content: space-around
-    }
 
-    .work-request--options .options-a,
-    .work-request--options .options-b {
-        display: block;
-        width: auto
-    }
-}
-
-@media (max-width: 600px) {
-    .work-request--options {
-        margin: 20px 0
-    }
-}
-
-@media (max-width: 600px) and (max-width: 415px) {
-    .work-request--options {
-        -webkit-box-pack: justify;
-        -webkit-justify-content: space-between;
-        -ms-flex-pack: justify;
-        justify-content: space-between
-    }
-}
-
-@media (max-width: 600px) {
-    .work-request--options label {
-        width: 150px;
-        margin-bottom: 15px;
-        font-size: 14px
-    }
-
-    .work-request--options input[type="checkbox"]:checked+label svg {
-        width: 12px
-    }
-}
 
 .perspective {
     position: relative;
@@ -1072,17 +966,7 @@ body {
     opacity: 1
 }
 
-@media (max-width: 767px) {
-    .outer-nav>li {
-        font-size: 44px
-    }
-}
 
-@media (max-width: 600px) {
-    .outer-nav>li {
-        font-size: 34px
-    }
-}
 
 #matrix {
     position: absolute;
@@ -1106,6 +990,55 @@ body {
     text-align: left;
     font-size: 17px;
 }
+
+
+
+@media (max-width: 1180px) {
+    .education {
+        max-width: 100%;
+    }
+
+    #mendc {
+        display: none;
+    }
+
+    .resume-item {
+        margin-bottom: 15px;
+    }
+  
+    /* Reduce the font size of h3 elements */
+    .resume-title {
+        font-size: 1.2rem; /* Adjust as needed */
+    }
+  
+    /* Reduce the font size of h4 elements */
+    .resume-item h4 {
+        font-size: 1rem; /* Adjust as needed */
+    }
+  
+    /* Reduce the font size of h5 elements */
+    .resume-item h5 {
+        font-size: 0.9rem; /* Adjust as needed */
+    }
+  
+    /* Reduce the font size of p elements */
+    .resume-item p {
+        font-size: 0.9rem; /* Adjust as needed */
+    }
+    
+    .about--banner h2 {
+        font-size: 1rem; /* Adjust as needed */
+        margin-top: 20px; /* Adjust as needed */
+    }
+    
+    .about--banner h2 a.cvlinks {
+        font-size: 0.8rem; /* Adjust as needed */
+        position: absolute;
+        bottom: 0;
+        right: 0;
+    }
+}
+
 
 
 /* 
@@ -1236,3 +1169,171 @@ body {
     color: #0056b3; /* Darker blue color on hover */
   }
   
+  @media (max-width: 1180px) {
+    .education {
+        max-width: 100%;
+    }
+
+    #mendc {
+        display: none;
+    }
+
+    .resume-item {
+        margin-bottom: 15px;
+    }
+  
+    /* Reduce the font size of h3 elements */
+    .resume-title {
+        font-size: 1.2rem; /* Adjust as needed */
+    }
+  
+    /* Reduce the font size of h4 elements */
+    .resume-item h4 {
+        font-size: 1rem; /* Adjust as needed */
+    }
+  
+    /* Reduce the font size of h5 elements */
+    .resume-item h5 {
+        font-size: 0.9rem; /* Adjust as needed */
+    }
+  
+    /* Reduce the font size of p elements */
+    .resume-item p {
+        font-size: 0.9rem; /* Adjust as needed */
+    }
+    
+    .about--banner h2 {
+        font-size: 1rem; /* Adjust as needed */
+        margin-top: 20px; /* Adjust as needed */
+    }
+    
+    .about--banner h2 a.cvlinks {
+        font-size: 0.8rem; /* Adjust as needed */
+        position: absolute;
+        bottom: 0;
+        right: 0;
+    }
+}
+
+
+  @media (max-width: 1180px) {
+    .hire {
+        max-width: 100%
+    }
+}
+@media (max-width: 767px) {
+    .work-request--options {
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+        -webkit-flex-direction: row;
+        -ms-flex-direction: row;
+        flex-direction: row;
+        -webkit-justify-content: space-around;
+        -ms-flex-pack: distribute;
+        justify-content: space-around
+    }
+
+    .work-request--options .options-a,
+    .work-request--options .options-b {
+        display: block;
+        width: auto
+    }
+}
+
+@media (max-width: 600px) {
+    .work-request--options {
+        margin: 20px 0
+    }
+}
+
+@media (max-width: 600px) and (max-width: 415px) {
+    .work-request--options {
+        -webkit-box-pack: justify;
+        -webkit-justify-content: space-between;
+        -ms-flex-pack: justify;
+        justify-content: space-between
+    }
+}
+
+@media (max-width: 600px) {
+    .work-request--options label {
+        width: 150px;
+        margin-bottom: 15px;
+        font-size: 14px
+    }
+
+    .work-request--options input[type="checkbox"]:checked+label svg {
+        width: 12px
+    }
+}
+@media (max-width: 767px) {
+    .outer-nav>li {
+        font-size: 44px
+    }
+}
+
+@media (max-width: 600px) {
+    .outer-nav>li {
+        font-size: 34px
+    }
+}
+
+@media (max-width: 1180px) {
+    .hire {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 767px) {
+    .work-request--options {
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+        -webkit-flex-direction: row;
+        -ms-flex-direction: row;
+        flex-direction: row;
+        -webkit-justify-content: space-around;
+        -ms-flex-pack: distribute;
+        justify-content: space-around;
+    }
+
+    .work-request--options .options-a,
+    .work-request--options .options-b {
+        display: block;
+        width: auto;
+    }
+
+    .outer-nav>li {
+        font-size: 44px;
+    }
+}
+
+@media (max-width: 600px) {
+    .work-request--options {
+        margin: 20px 0;
+    }
+
+    .work-request--options {
+        -webkit-box-pack: justify;
+        -webkit-justify-content: space-between;
+        -ms-flex-pack: justify;
+        justify-content: space-between;
+    }
+
+    .work-request--options label {
+        width: 150px;
+        margin-bottom: 15px;
+        font-size: 14px;
+    }
+
+    .work-request--options input[type="checkbox"]:checked+label svg {
+        width: 12px;
+    }
+
+    .outer-nav>li {
+        font-size: 34px;
+    }
+}
