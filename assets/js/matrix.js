@@ -72,7 +72,7 @@ function startMatrixEffect() {
   animate();
   const context = canvas.getContext('2d');
   const img = new Image();
-  img.src = 'assets/img/avatar.png';
+  img.src = 'assets/img/youngme.png';
   img.onload = () => {
     context.drawImage(img, 0, 0);
   };

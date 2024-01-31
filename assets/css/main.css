@@ -399,64 +399,15 @@ body {
 .intro--options p {
     margin-bottom: 0
 }
+#matrix {
+    position: absolute;
+    bottom: 20px;
 
-@media (max-width: 1180px) {
-    .intro {
-        max-width: 100%;
-    }
+    right: 0;
 
-    #avatar,
-    #matrix {
-        display: block;
-        max-width: 100%;
-        height: 50%;
-      
-     
-    }
+    z-index: 0;
 
-    .intro--banner h1 {
-        position: relative;
-        font-size: 34px; /* Adjust font size as needed */
-    }
-
-
-    .intro--options a {
-        margin-bottom: 5px;
-        transform: rotate(5deg);
-  -webkit-transform: rotate(5deg);
-    }
 }
-
-/* Adjust styles for smaller screens */
-@media only screen and (max-width: 768px) {
-    .intro--banner h1 {
-        position: relative;
-        font-size: 34px; /* Adjust font size as needed */
-    }
-
-    #matrix {
-        display: block;
-        max-width: 100%;
-        /* Center horizontally */
-    }
-
-    #avatar {
-        width: 80px; /* Adjust size as needed */
-        height: 80px; /* Adjust size as needed */
-        margin: 0 auto; /* Center horizontally */
-    }
-
-    
-
-    .intro--options a {
-        margin-bottom: 10px;
-        transform: rotate(5deg);
-  -webkit-transform: rotate(5deg);
-  
-        
-    }
-}
-
 
 
 /* 
@@ -586,58 +537,19 @@ body {
     /* Increase the size on hover */
 }
 
-/* CSS for mobile devices */
-@media only screen and (max-width: 767px) {
-    /* Adjust the layout to fit smaller screens */
-    .slider {
-      display: flex;
-      flex-direction: column;
-    }
-  
-    .slider--item {
-      width: 100%;
-      margin-bottom: 50px;
-    }
-  
-    .slider--next {
-      display: none; /* Hide the next button on mobile */
-      /* Add styles specific to phone screens here */
-      /* For example, you can adjust size or positioning */
-      width: 40px;
-      height: 40px;
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      border-radius: 50%;
-      box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
-      padding: 10px;
-    }
-
-    /* Reduce the font size of h2 elements */
-    .slider--item-description h2 {
-      font-size: 1.2rem; /* Adjust as needed */
-    }
-  
-    /* Reduce the font size of p elements with class description */
-    .slider--item-description p.description {
-      font-size: 0.9rem; /* Adjust as needed */
-    }
-
-    /* You may need to adjust SVG size or styles accordingly */
-    .slider--next svg {
-      width: 50%;
-      height: 50%;
-      fill: #333; /* Change color as needed */
-    }
+.date-work {
+    color: rgb(97, 97, 168);
+    /* Change color as desired */
+    font-size: 18px;
+    /* Adjust font size as needed */
 }
 
-@media (max-width: 1180px) {
-    .work {
-        max-width: 100%;
-    }
+.slider--item-description ul li {
+    text-align: left;
+    font-size: 17px;
 }
 
-  
+
 
 
   /* 
@@ -755,6 +667,106 @@ body {
     right: -12px
 }
 
+
+/* Style for Education section */
+.education {
+
+    padding: 20px;
+    /* Padding around the content */
+    border-radius: 5px;
+    /* Rounded corners */
+    position: absolute;
+    top: 0;
+    right: 0;
+
+
+    padding: 20px;
+    /* Padding around the content */
+    border-radius: 5px;
+    /* Rounded corners */
+}
+
+/* Style for Resume Title */
+.resume-title {
+    color: #1e69cc;
+    /* Text color */
+    font-size: 24px;
+    /* Font size */
+    margin-bottom: 15px;
+    /* Spacing at the bottom */
+    position: relative;
+    /* Relative positioning */
+}
+
+/* Add line with space to the left */
+.resume-title::before {
+    content: '';
+    position: absolute;
+    left: -10px;
+    /* Adjust space */
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    /* Line width */
+    background-color: #007bff;
+    /* Line color */
+}
+
+/* Style for each resume item */
+.resume-item {
+    margin-bottom: 15px;
+    /* Spacing between items */
+    padding-left: 20px;
+    /* Adjust space for the content */
+    position: relative;
+    /* Relative positioning */
+}
+
+/* Style for the line between resume items */
+.resume-item::before {
+    content: '';
+    position: absolute;
+    left: -10px;
+    /* Adjust space */
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    /* Line width */
+    background-color: #ccc;
+    /* Line color */
+}
+
+/* Style for the heading of each resume item */
+.resume-item h4 {
+    color: #007bff;
+    /* Heading color */
+    font-size: 18px;
+    /* Font size */
+    margin-bottom: 5px;
+    /* Spacing at the bottom */
+}
+
+/* Style for the date of each resume item */
+.resume-item h5 {
+    color: #678ead;
+    /* Date color */
+    font-size: 16px;
+    /* Font size */
+    margin-bottom: 5px;
+    /* Spacing at the bottom */
+}
+
+/* Style for the location/emphasis of each resume item */
+.resume-item p em {
+    color: #5ebbbe;
+    /* Emphasis color */
+}
+
+/*
+
+================================================= SKILLS ZONE =================================================
+
+*/
 .hire {
     position: relative;
     display: -webkit-box;
@@ -967,181 +979,6 @@ body {
 }
 
 
-
-#matrix {
-    position: absolute;
-    bottom: 20px;
-
-    right: 0;
-
-    z-index: 0;
-
-}
-
-
-.date-work {
-    color: rgb(97, 97, 168);
-    /* Change color as desired */
-    font-size: 18px;
-    /* Adjust font size as needed */
-}
-
-.slider--item-description ul li {
-    text-align: left;
-    font-size: 17px;
-}
-
-
-
-@media (max-width: 1180px) {
-    .education {
-        max-width: 100%;
-    }
-
-    #mendc {
-        display: none;
-    }
-
-    .resume-item {
-        margin-bottom: 15px;
-    }
-  
-    /* Reduce the font size of h3 elements */
-    .resume-title {
-        font-size: 1.2rem; /* Adjust as needed */
-    }
-  
-    /* Reduce the font size of h4 elements */
-    .resume-item h4 {
-        font-size: 1rem; /* Adjust as needed */
-    }
-  
-    /* Reduce the font size of h5 elements */
-    .resume-item h5 {
-        font-size: 0.9rem; /* Adjust as needed */
-    }
-  
-    /* Reduce the font size of p elements */
-    .resume-item p {
-        font-size: 0.9rem; /* Adjust as needed */
-    }
-    
-    .about--banner h2 {
-        font-size: 1rem; /* Adjust as needed */
-        margin-top: 20px; /* Adjust as needed */
-    }
-    
-    .about--banner h2 a.cvlinks {
-        font-size: 0.8rem; /* Adjust as needed */
-        position: absolute;
-        bottom: 0;
-        right: 0;
-    }
-}
-
-
-
-/* 
-
-================================================= SKILLS ZONE =================================================
-
-*/
-
-
-/* Style for Education section */
-.education {
-
-    padding: 20px;
-    /* Padding around the content */
-    border-radius: 5px;
-    /* Rounded corners */
-    position: absolute;
-    top: 0;
-    right: 0;
-
-
-    padding: 20px;
-    /* Padding around the content */
-    border-radius: 5px;
-    /* Rounded corners */
-}
-
-/* Style for Resume Title */
-.resume-title {
-    color: #1e69cc;
-    /* Text color */
-    font-size: 24px;
-    /* Font size */
-    margin-bottom: 15px;
-    /* Spacing at the bottom */
-    position: relative;
-    /* Relative positioning */
-}
-
-/* Add line with space to the left */
-.resume-title::before {
-    content: '';
-    position: absolute;
-    left: -10px;
-    /* Adjust space */
-    top: 0;
-    bottom: 0;
-    width: 2px;
-    /* Line width */
-    background-color: #007bff;
-    /* Line color */
-}
-
-/* Style for each resume item */
-.resume-item {
-    margin-bottom: 15px;
-    /* Spacing between items */
-    padding-left: 20px;
-    /* Adjust space for the content */
-    position: relative;
-    /* Relative positioning */
-}
-
-/* Style for the line between resume items */
-.resume-item::before {
-    content: '';
-    position: absolute;
-    left: -10px;
-    /* Adjust space */
-    top: 0;
-    bottom: 0;
-    width: 2px;
-    /* Line width */
-    background-color: #ccc;
-    /* Line color */
-}
-
-/* Style for the heading of each resume item */
-.resume-item h4 {
-    color: #007bff;
-    /* Heading color */
-    font-size: 18px;
-    /* Font size */
-    margin-bottom: 5px;
-    /* Spacing at the bottom */
-}
-
-/* Style for the date of each resume item */
-.resume-item h5 {
-    color: #555;
-    /* Date color */
-    font-size: 16px;
-    /* Font size */
-    margin-bottom: 5px;
-    /* Spacing at the bottom */
-}
-
-/* Style for the location/emphasis of each resume item */
-.resume-item p em {
-    color: #777;
-    /* Emphasis color */
-}
-
 /* Style for the list items */
 
 .item-skills {
@@ -1158,7 +995,6 @@ body {
     /* Text color */
 }
 
-/* Css */
 .certification-link {
     color: #007bff; /* Blue color for links */
     text-decoration: none; /* Remove default underline */
@@ -1168,172 +1004,10 @@ body {
   .certification-link:hover {
     color: #0056b3; /* Darker blue color on hover */
   }
-  
-  @media (max-width: 1180px) {
-    .education {
-        max-width: 100%;
-    }
-
-    #mendc {
-        display: none;
-    }
-
-    .resume-item {
-        margin-bottom: 15px;
-    }
-  
-    /* Reduce the font size of h3 elements */
-    .resume-title {
-        font-size: 1.2rem; /* Adjust as needed */
-    }
-  
-    /* Reduce the font size of h4 elements */
-    .resume-item h4 {
-        font-size: 1rem; /* Adjust as needed */
-    }
-  
-    /* Reduce the font size of h5 elements */
-    .resume-item h5 {
-        font-size: 0.9rem; /* Adjust as needed */
-    }
-  
-    /* Reduce the font size of p elements */
-    .resume-item p {
-        font-size: 0.9rem; /* Adjust as needed */
-    }
-    
-    .about--banner h2 {
-        font-size: 1rem; /* Adjust as needed */
-        margin-top: 20px; /* Adjust as needed */
-    }
-    
-    .about--banner h2 a.cvlinks {
-        font-size: 0.8rem; /* Adjust as needed */
-        position: absolute;
-        bottom: 0;
-        right: 0;
-    }
-}
 
 
-  @media (max-width: 1180px) {
-    .hire {
-        max-width: 100%
-    }
-}
-@media (max-width: 767px) {
-    .work-request--options {
-        -webkit-box-orient: horizontal;
-        -webkit-box-direction: normal;
-        -webkit-flex-direction: row;
-        -ms-flex-direction: row;
-        flex-direction: row;
-        -webkit-justify-content: space-around;
-        -ms-flex-pack: distribute;
-        justify-content: space-around
-    }
 
-    .work-request--options .options-a,
-    .work-request--options .options-b {
-        display: block;
-        width: auto
-    }
-}
 
-@media (max-width: 600px) {
-    .work-request--options {
-        margin: 20px 0
-    }
-}
 
-@media (max-width: 600px) and (max-width: 415px) {
-    .work-request--options {
-        -webkit-box-pack: justify;
-        -webkit-justify-content: space-between;
-        -ms-flex-pack: justify;
-        justify-content: space-between
-    }
-}
 
-@media (max-width: 600px) {
-    .work-request--options label {
-        width: 150px;
-        margin-bottom: 15px;
-        font-size: 14px
-    }
 
-    .work-request--options input[type="checkbox"]:checked+label svg {
-        width: 12px
-    }
-}
-@media (max-width: 767px) {
-    .outer-nav>li {
-        font-size: 44px
-    }
-}
-
-@media (max-width: 600px) {
-    .outer-nav>li {
-        font-size: 34px
-    }
-}
-
-@media (max-width: 1180px) {
-    .hire {
-        max-width: 100%;
-    }
-}
-
-@media (max-width: 767px) {
-    .work-request--options {
-        display: -webkit-box;
-        display: -webkit-flex;
-        display: -ms-flexbox;
-        display: flex;
-        -webkit-box-orient: horizontal;
-        -webkit-box-direction: normal;
-        -webkit-flex-direction: row;
-        -ms-flex-direction: row;
-        flex-direction: row;
-        -webkit-justify-content: space-around;
-        -ms-flex-pack: distribute;
-        justify-content: space-around;
-    }
-
-    .work-request--options .options-a,
-    .work-request--options .options-b {
-        display: block;
-        width: auto;
-    }
-
-    .outer-nav>li {
-        font-size: 44px;
-    }
-}
-
-@media (max-width: 600px) {
-    .work-request--options {
-        margin: 20px 0;
-    }
-
-    .work-request--options {
-        -webkit-box-pack: justify;
-        -webkit-justify-content: space-between;
-        -ms-flex-pack: justify;
-        justify-content: space-between;
-    }
-
-    .work-request--options label {
-        width: 150px;
-        margin-bottom: 15px;
-        font-size: 14px;
-    }
-
-    .work-request--options input[type="checkbox"]:checked+label svg {
-        width: 12px;
-    }
-
-    .outer-nav>li {
-        font-size: 34px;
-    }
-}

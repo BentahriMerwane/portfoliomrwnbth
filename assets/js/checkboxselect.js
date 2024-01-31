@@ -52,7 +52,6 @@ var skillsData = {
 };
 
 var lastChecked = null;
-
 function logSkills(checkbox) {
   var skillName = checkbox.value;
   var skillValues = skillsData[skillName];
@@ -62,28 +61,36 @@ function logSkills(checkbox) {
     lastChecked.checked = false;
   }
   lastChecked = checkbox;
-  if (checkbox.checked) {
-    selectedValuesContainer.innerHTML = "<ul></ul>"
-    skillValues.forEach(function (value) {
-      var listItem = document.createElement("li");
-      if (typeof value === "object") {
-        var sublist = document.createElement("ul");
-        value.pdfs.forEach(function(pdf) {
-          var subListItem = document.createElement("li");
-          var link = document.createElement("a");
-          link.href = pdf.link;
-          link.textContent = pdf.name;
-          link.target = "_blank"; // Open link in a new tab
-          link.classList.add("certification-link"); // Add the class to the link
-          subListItem.appendChild(link);
-          sublist.appendChild(subListItem);
-        });
-        listItem.textContent = value.name + ":";
-        listItem.appendChild(sublist);
-      } else {
-        listItem.textContent = "‣ " + value;
-      }
-      selectedValuesContainer.appendChild(listItem);
-    });
+
+  // Clear the selectedValuesContainer if the checkbox is not checked
+  if (!checkbox.checked) {
+    selectedValuesContainer.innerHTML = "";
+    return; // Exit the function if checkbox is unchecked
   }
+
+  // Populate the selectedValuesContainer if the checkbox is checked
+  selectedValuesContainer.innerHTML = "<ul></ul>";
+  skillValues.forEach(function (value) {
+    var listItem = document.createElement("li");
+    if (typeof value === "object") {
+      var sublist = document.createElement("ul");
+      value.pdfs.forEach(function(pdf) {
+        var subListItem = document.createElement("li");
+        var link = document.createElement("a");
+        link.href = pdf.link;
+        link.textContent = pdf.name;
+        link.target = "_blank"; // Open link in a new tab
+        link.classList.add("certification-link"); // Add the class to the link
+        subListItem.appendChild(link);
+        sublist.appendChild(subListItem);
+      });
+      listItem.textContent = value.name + ":";
+      listItem.appendChild(sublist);
+    } else {
+      listItem.textContent = "‣ " + value;
+    }
+    
+    selectedValuesContainer.appendChild(listItem);
+  });
 }
+
