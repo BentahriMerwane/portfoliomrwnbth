@@ -666,27 +666,37 @@ body {
     /* Increase the size on hover */
 }
 
-@media (max-width: 767px) {
-    .work--lockup .slider {
-        width: 75%
+
+
+
+/* CSS for mobile devices */
+@media only screen and (max-width: 767px) {
+    /* Adjust the layout to fit smaller screens */
+    .slider {
+      display: flex;
+      flex-direction: column;
     }
-
-
-}
-
-@media (max-width: 600px) {
-    .work--lockup .slider {
-        width: auto
+  
+    .slider--item {
+      width: 100%;
+      margin-bottom: 50px;
     }
-
-    .work--lockup .slider--item-left,
-    .work--lockup .slider--item-right {
-        display: none
+  
+  
+  
+    .slider--next {
+      display: none; /* Hide the next button on mobile */
     }
-}
-
-/* Media query for phone screens */
-@media screen and (max-width: 767px) {
+  
+    /* Reduce the font size of h2 elements */
+    .slider--item-description h2 {
+      font-size: 1.2rem; /* Adjust as needed */
+    }
+  
+    /* Reduce the font size of p elements with class description */
+    .slider--item-description p.description {
+      font-size: 0.9rem; /* Adjust as needed */
+    }
     .slider--next {
         /* Add styles specific to phone screens here */
         /* For example, you can adjust size or positioning */
@@ -707,8 +717,8 @@ body {
         height: 50%;
         fill: #333; /* Change color as needed */
     }
-}
-
+  }
+  
 
 .about {
     position: relative;
@@ -737,41 +747,53 @@ body {
     }
 
     #mendc {
-        display: non;
+        display: none;
     }
-}
 
-@media (max-width: 767px) {
     .education {
         max-width: 100%
     }
 
-    #mendc {
-        display: non;
+  
+    .resume-item {
+      margin-bottom: 15px;
     }
-}
-
-@media (max-width: 600px) {
-    .education {
-        max-width: 100%
+  
+    /* Reduce the font size of h3 elements */
+    .resume-title {
+      font-size: 1.2rem; /* Adjust as needed */
     }
-
-    #mendc {
-        display: none;
+  
+    /* Reduce the font size of h4 elements */
+    .resume-item h4 {
+      font-size: 1rem; /* Adjust as needed */
     }
-}
-
-@media only screen and (max-width: 768px) {
-    #mendc {
-        display: none;
+  
+    /* Reduce the font size of h5 elements */
+    .resume-item h5 {
+      font-size: 0.9rem; /* Adjust as needed */
     }
-}
-
-@media only screen and (max-width: 768px) {
+  
+    /* Reduce the font size of p elements */
+    .resume-item p {
+      font-size: 0.9rem; /* Adjust as needed */
+    }
     .about--banner h2 {
-        display: none;
-    }
-}
+        font-size: 1rem; /* Adjust as needed */
+        margin-top: 20px; /* Adjust as needed */
+      }
+    
+      .about--banner h2 a.cvlinks {
+        font-size: 0.8rem; /* Adjust as needed */
+        position: absolute;
+        bottom: 0;
+        right: 0;
+      
+      }
+     
+  }
+  
+
 
 #mendc {
     width: 50%;
